@@ -5,6 +5,9 @@ class puppet::server::config inherits puppet::config {
   # ENC script, reporting script etc.
   class {'foreman::puppetmaster':
     foreman_url    => $puppet::server::foreman_url,
+    foreman_user   => $puppet::server::foreman_user,
+    foreman_password => $puppet::server::foreman_password,
+    foreman_timeout => $puppet::server::foreman_timeout,
     facts          => $puppet::server::facts,
     storeconfigs   => $puppet::server::storeconfigs,
     puppet_home    => $puppet::server::puppet_home,
